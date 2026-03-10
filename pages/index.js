@@ -241,12 +241,12 @@ const styles = {
   }
 }
 
-export default function Dashboard() {
-  const [form, setForm] = useState({
+const [form, setForm] = useState({
     title: '',
     date: '',
     start_time: '',
     end_time: '',
+    timezone: 'America/New_York',
     description: '',
     meet_link: '',
   })
