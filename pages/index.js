@@ -296,8 +296,8 @@ export default function Dashboard() {
       .select()
       .single()
 
-    if (insertError) {
-      setError('Something went wrong. Please try again.')
+   if (insertError) {
+      setError(insertError.message || JSON.stringify(insertError))
       console.error(insertError)
     } else {
       setCreatedEvent(data)
