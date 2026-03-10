@@ -422,6 +422,38 @@ const [form, setForm] = useState({
                     onBlur={e => e.target.style.borderColor = 'var(--ivory-dark)'}
                   />
                 </div>
+{/* Timezone */}
+                <div style={styles.fieldGroup}>
+                  <label style={styles.label}>Timezone *</label>
+                  <select
+                    style={styles.input}
+                    name="timezone"
+                    value={form.timezone}
+                    onChange={handleChange}
+                    onFocus={e => e.target.style.borderColor = 'var(--ink)'}
+                    onBlur={e => e.target.style.borderColor = 'var(--ivory-dark)'}
+                  >
+                    {[
+                      { value: 'America/New_York', label: 'Eastern (ET)' },
+                      { value: 'America/Chicago', label: 'Central (CT)' },
+                      { value: 'America/Denver', label: 'Mountain (MT)' },
+                      { value: 'America/Los_Angeles', label: 'Pacific (PT)' },
+                      { value: 'America/Anchorage', label: 'Alaska (AKT)' },
+                      { value: 'Pacific/Honolulu', label: 'Hawaii (HT)' },
+                      { value: 'America/Toronto', label: 'Toronto (ET)' },
+                      { value: 'America/Vancouver', label: 'Vancouver (PT)' },
+                      { value: 'Europe/London', label: 'London (GMT/BST)' },
+                      { value: 'Europe/Paris', label: 'Paris (CET)' },
+                      { value: 'Europe/Jerusalem', label: 'Jerusalem (IST)' },
+                      { value: 'Asia/Dubai', label: 'Dubai (GST)' },
+                      { value: 'Asia/Kolkata', label: 'India (IST)' },
+                      { value: 'Asia/Singapore', label: 'Singapore (SGT)' },
+                      { value: 'Australia/Sydney', label: 'Sydney (AEDT)' },
+                    ].map(tz => (
+                      <option key={tz.value} value={tz.value}>{tz.label}</option>
+                    ))}
+                  </select>
+                </div>
 
                 {/* Description */}
                 <div style={{ ...styles.fieldGroup, ...styles.formGridFull }}>
