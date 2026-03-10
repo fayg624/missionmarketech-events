@@ -72,7 +72,7 @@ function CalendarButton({ href, onClick, icon, label, color, textColor }) {
 }
 
 export default function EventPage({ event }) {
-  const displayDate = formatDisplayDate(event.date, event.start_time, event.end_time)
+  const displayDate = formatDisplayDate(event.date, event.start_time, event.end_time, event.timezone)
 
   function downloadICS() {
     const content = buildICSContent(event)
